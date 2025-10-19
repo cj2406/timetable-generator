@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin | Timetables</title>
+  <style>
+    :root {
+      --primary: #5c89ea;
+      --bg: #f9fafb;
+      --white: #ffffff;
+      --gray: #6b7280;
+      --border: #e5e7eb;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Inter", sans-serif;
+      font-size: small;
+
+    }
+
+    body {
+      display: flex;
+      min-height: 100vh;
+      background: var(--bg);
+      color: #111827;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 240px;
+      background: var(--white);
+      border-right: 1px solid var(--border);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .sidebar h1 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 2rem;
+    }
+
+    .nav a {
+      display: block;
+      padding: 10px 12px;
+      margin-bottom: 6px;
+      border-radius: 8px;
+      color: var(--gray);
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .nav a:hover,
+    .nav a.active {
+      background: var(--primary);
+      color: white;
+    }
+
+    /* Main */
+    .main {
+      flex: 1;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+
+    .topbar h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    .profile {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--border);
+    }
+
+    /* Table */
+    .timetable {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 600px;
+    }
+
+    th, td {
+      border: 1px solid var(--border);
+      padding: 6px;
+      text-align: center;
+      font-size: 0.85rem;
+    }
+
+    th {
+      background: var(--bg);
+      font-weight: 600;
+    }
+
+    tr:nth-child(even) td {
+      background: #fdfdfd;
+    }
+
+    tr:hover td {
+      background: #f1f5ff;
+    }
+
+    /* Button */
+    .actions {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 16px;
+    }
+
+    .btn {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn:hover {
+      background: #1e4fd6;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .sidebar {
+        display: none;
+      }
+      .main {
+        padding: 16px;
+      }
+      table {
+        font-size: 0.85rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <aside class="sidebar">
+    <h1>Admin Panel</h1>
+    <nav class="nav">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="timetable.html" class="active">Timetables</a>
+      <a href="lecturers.html">Lecturers</a>
+      <a href="">about</a>
+      <a href="settings.html">Settings</a>
+    </nav>
+  </aside>
+
+  <main class="main">
+    <div class="topbar">
+      <h2>Class Timetable</h2>
+      <div class="profile"></div>
+    </div>
+
+    <div class="actions">
+      <button class="btn">+ Generate New Timetable</button>
+    </div>
+
+    <section class="timetable">
+      <table>
+        <thead>
+          <tr>
+            <th>Day</th>
+            <th> 9:30-11:00</th>
+            <th> 12:00-1:00</th>
+            <th> 1:30-3:00</th>
+            <th> 3:30-5:00</th>
+            <th> 5:30-7:00</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td> Monday</td>
+            <td>sen 201</td>
+            <td>mth 201</td>
+            <td>gst 221</td>
+            <td>phy 107</td>
+            <td>ift 211</td>
+          </tr>
+          <tr>
+            <td>Tuesday</td>
+            <td>sen 201</td>
+            <td>mth 201</td>
+            <td>gst 221</td>
+            <td>phy 107</td>
+            <td>ift 211</td>
+          </tr>
+          <tr>
+            <td>Wednesday</td>
+            <td>sen 201</td>
+            <td>mth 201</td>
+            <td>gst 221</td>
+            <td>phy 107</td>
+            <td>ift 211</td>
+          </tr>
+          <tr>
+            <td>Thursday</td>
+            <td>sen 201</td>
+            <td>mth 201</td>
+            <td>gst 221</td>
+            <td>phy 107</td>
+            <td>ift 211</td>
+          </tr>
+          <tr>
+            <td>Friday</td>
+             <td>sen 201</td>
+            <td>mth 201</td>
+            <td>gst 221</td>
+            <td>phy 107</td>
+            <td>ift 211</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+</body>
+</html>
